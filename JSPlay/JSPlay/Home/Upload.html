@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JS播放器</title>
+    <meta charset="utf-8" />
+    <script src="../../Scripts/jquery-1.7.1.min.js"></script>
+    <script for="ActiveXControlTest11" event="OnFilePath(szPath)" type="text/javascript">
+        $.ajax({
+            type: "post",
+            url: "/ashx/PostUpload.ashx",
+            data: "path=" + szPath,
+            cache: false,
+            success: function (msg) {
+                if (msg == '1') {
+                    location.href = '/Home/Index';
+                }
+                else {
+                    alert(msg);
+                }
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <object id="ActiveXControlTest11" width="500" height="100"
+            classid="CLSID:14C570F3-260D-4CF2-855C-76FDA3CE8E42">
+        <param name="_Version" value="65536">
+        <param name="_ExtentX" value="2646">
+        <param name="_ExtentY" value="1323">
+        <param name="_StockProps" value="0">
+    </object>
+</body>
+</html>
