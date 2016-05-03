@@ -16,11 +16,12 @@ namespace JSPlay.ashx
         {
             context.Response.ContentType = "text/plain";
             string path = context.Request["path"];
+            byte[] msg;
             using (WebClient wc = new WebClient())
             {
-                wc.UploadFile("http://localhost:26714/ashx/upload.ashx", path);
+                msg = wc.UploadFile("http://localhost:26714/ashx/upload.ashx", path);
             }
-            context.Response.Write("Hello World");
+            context.Response.Write(System.Text.Encoding.Default.GetString(msg));
         }
 
         public bool IsReusable

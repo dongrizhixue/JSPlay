@@ -18,7 +18,7 @@
             }
 
             $("#form1").ajaxSubmit({
-                url: 'http://192.168.70.38:9000/ashx/upload.ashx', /*设置post提交到的页面*/
+                url: 'http://localhost:26714/ashx/upload.ashx', /*设置post提交到的页面*/
                 type: "post", /*设置表单以post方法提交*/
                 dataType: "text", /*设置返回值类型为文本*/
                 success: function (str) {
